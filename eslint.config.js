@@ -8,7 +8,7 @@ export default withNuxt([
     plugins: { '@stylistic': stylistic },
     rules: {
       // Vue & Nuxt
-      'vue/multi-word-component-names': ['error', { 'ignores': ['index'] }],
+      'vue/multi-word-component-names': ['error', { 'ignores': ['index'], ignorePattern: '^pages/' }],
       'vue/max-attributes-per-line': ['error', { singleline: 5, multiline: 1 }],
 
       // Error Prevention
