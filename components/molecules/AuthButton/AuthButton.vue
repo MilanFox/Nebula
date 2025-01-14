@@ -18,6 +18,8 @@ const handleSignOut = async () => { await signOut(auth); };
 </script>
 
 <style lang="scss">
+@use 'assets/scss/responsive';
+
 .auth-button {
   @mixin auth-button-style {
     padding: 16px;
@@ -34,13 +36,24 @@ const handleSignOut = async () => { await signOut(auth); };
   }
 
   > a {
-    @include auth-button-style;
+    @include responsive.from-breakpoint(tablet) {
+      @include auth-button-style;
+    }
+
   }
 
   > button {
     all: unset;
     cursor: pointer;
-    @include auth-button-style;
+
+    &:hover {
+      color: #2599FE;
+      text-decoration: underline;
+    }
+
+    @include responsive.from-breakpoint(tablet) {
+      @include auth-button-style;
+    }
   }
 }
 </style>

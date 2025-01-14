@@ -1,3 +1,5 @@
+@use 'assets/scss/responsive';
+
 /* FONTS  */
 
 @font-face {
@@ -28,6 +30,10 @@ body {
   min-height: 100vh;
   font-family: $montserrat;
   font-weight: 500;
+
+  @include responsive.to-breakpoint(tablet) {
+    font-size: 20px;
+  }
 }
 
 /* RESET */
