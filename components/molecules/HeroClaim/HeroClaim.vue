@@ -1,7 +1,7 @@
 <template>
-  <section class="hero-claim">
+  <h1 class="hero-claim">
     Putting <em>Fun</em> in <em>Fundamentals</em>
-  </section>
+  </h1>
 </template>
 
 <style lang="scss">
