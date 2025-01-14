@@ -17,6 +17,7 @@ defineProps<ContentSectionProps>();
 
   &__title {
     font-size: 32px;
+    margin: 0 0 16px;
   }
 }
 </style>
