@@ -5,7 +5,7 @@
       :key="input.data.label"
       v-bind="input.data"
       v-model="input.model"
-      ref="input"
+      ref="inputs"
       @enter="handleSubmit"
     />
     <TextButton @click="handleSubmit">{{ submitLabel }}</TextButton>
@@ -18,11 +18,11 @@ import type { InputFormProps } from './InputForm.types';
 
 const props = withDefaults(defineProps<InputFormProps>(), { submitLabel: 'Submit' });
 
-const input = ref<TextInputInstance[]>();
+const inputs = ref<TextInputInstance[]>();
 
 const validateAll = () => {
-  input.value?.forEach(input => input.validate());
-  return input.value?.every(inputField => inputField.isValid);
+  inputs.value?.forEach(input => input.validate());
+  return inputs.value?.every(inputField => inputField.isValid);
 };
 
 const handleSubmit = () => {
