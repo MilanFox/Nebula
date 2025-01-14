@@ -1,3 +1,23 @@
+/* FONTS  */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+$montserrat: 'Montserrat', sans-serif;
+
+/* GENERAL */
+
 *, *::after, *::before {
   box-sizing: border-box;
 }
@@ -6,4 +26,18 @@ body {
   margin: 0;
   font-size: 16px;
   min-height: 100vh;
+  font-family: $montserrat;
+  font-weight: 500;
+}
+
+/* RESET */
+
+a {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    color: #2599FE;
+    text-decoration: underline;
+  }
 }
