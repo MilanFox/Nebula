@@ -41,6 +41,9 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
       title: 'Nebula',
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
