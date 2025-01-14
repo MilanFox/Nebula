@@ -1,6 +1,6 @@
 <template>
   <div class="header-bar">
-    <a href="/"><img src="assets/images/logo.svg" alt="Home" class="header-bar__logo"></a>
+    <NuxtLink to="/"><img src="assets/images/logo.svg" alt="Home" class="header-bar__logo"></NuxtLink>
     <nav class="header-bar__nav">
       <MainNav/>
       <AuthButton/>

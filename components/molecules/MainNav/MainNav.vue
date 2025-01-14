@@ -1,26 +1,26 @@
 <template>
   <ul class="main-nav">
-    <li v-for="{href, label} in navItems" :key="label" class="main-nav__link">
-      <a :href="href">{{ label }}</a>
+    <li v-for="{to, label} in navItems" :key="label" class="main-nav__link">
+      <NuxtLink :to="to">{{ label }}</NuxtLink>
     </li>
   </ul>
 </template>
 
 <script setup lang="ts">
-import { useUserStoreStore } from '~/stores/userStore';
+import { useUserStore } from '~/stores/userStore';
 import { storeToRefs } from 'pinia';
 
-const userStore = useUserStoreStore();
+const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
 
 const baseItems = [
-  { href: '/', label: 'Home' },
-  { href: '/', label: 'Puzzles' },
-  { href: '/', label: 'Repo' },
+  { to: '/', label: 'Home' },
+  { to: '/', label: 'Puzzles' },
+  { to: '/', label: 'Repo' },
 ];
 
 const navItems = computed(() => {
-  const accountLink = { href: '/login', label: 'Account' };
+  const accountLink = { to: '/login', label: 'Account' };
   return user.value ? [...baseItems, accountLink] : baseItems;
 });
 </script>

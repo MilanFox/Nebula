@@ -1,15 +1,18 @@
 <template>
   <div class="auth-button">
     <TextButton v-if="user" @click="handleSignOut">Log Out</TextButton>
-    <a v-else href="/login"> Login</a>
+    <NuxtLink v-else to="/login"> Login</NuxtLink>
   </div>
 </template>
 
 <script setup lang="ts">
 import { getAuth, signOut } from 'firebase/auth';
+import { useUserStore } from '~/stores/userStore';
+import { storeToRefs } from 'pinia';
 
 const auth = getAuth();
-const user = useCurrentUser();
+const userStore = useUserStore();
+const { user } = storeToRefs(userStore);
 
 const handleSignOut = async () => { await signOut(auth); };
 </script>
