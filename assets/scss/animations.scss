@@ -8,7 +8,9 @@
     }
   }
 
-  animation: rotation $duration linear infinite;
+  & {
+    animation: rotation $duration linear infinite;
+  }
 
   @media (prefers-reduced-motion) {
     animation: none;

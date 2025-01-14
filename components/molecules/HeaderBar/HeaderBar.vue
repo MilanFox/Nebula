@@ -20,7 +20,13 @@
   }
 
   &__logo {
-    width: 200px;
+    width: 300px;
+    margin-bottom: 16px;
+
+    @include responsive.from-breakpoint(tablet) {
+      width: 200px;
+      margin: 0;
+    }
   }
 }
 </style>
