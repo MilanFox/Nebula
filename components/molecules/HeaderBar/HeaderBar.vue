@@ -16,6 +16,7 @@
 
   @include responsive.to-breakpoint(tablet) {
     flex-direction: column;
+    margin: 0;
   }
 
   &__logo {

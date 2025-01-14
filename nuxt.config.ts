@@ -39,6 +39,18 @@ export default defineNuxtConfig({
     },
   },
 
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
+      title: 'Nebula',
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      ],
+    },
+  },
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -57,7 +69,7 @@ export default defineNuxtConfig({
       projectId: process.env.FIREBASE_PROJECT_ID,
       storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
       messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-      appId: process.env.FIREBASE_APP_ID
-    }
-  }
+      appId: process.env.FIREBASE_APP_ID,
+    },
+  },
 });

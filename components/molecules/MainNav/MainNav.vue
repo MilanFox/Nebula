@@ -32,9 +32,9 @@ const navItems = computed(() => {
 
 <style lang="scss">
 @use 'assets/scss/responsive';
+@use 'assets/scss/colors';
 
 .main-nav {
-
   @include responsive.to-breakpoint(tablet) {
     width: 100%;
   }
@@ -50,7 +50,7 @@ const navItems = computed(() => {
     @include responsive.to-breakpoint(tablet) {
       padding: 16px 0;
       border-width: 1px 0;
-      border-color: #BEC2C5;
+      border-color: colors.$grey;
       border-style: solid;
       width: 100%;
       gap: 16px;

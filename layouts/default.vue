@@ -1,7 +1,9 @@
 <template>
   <div class="default-layout">
     <HeaderBar/>
-    <slot/>
+    <main>
+      <slot/>
+    </main>
   </div>
 </template>
 
@@ -17,3 +19,5 @@ body:has(.default-layout) {
   margin: auto;
 }
 </style>
+<script setup lang="ts">
+</script>
