@@ -1,4 +1,5 @@
 @use 'assets/scss/responsive';
+@use 'assets/scss/colors';
 
 /* FONTS  */
 
@@ -30,6 +31,7 @@ body {
   min-height: 100vh;
   font-family: $montserrat;
   font-weight: 500;
+  color: colors.$black;
 
   @include responsive.to-breakpoint(tablet) {
     font-size: 20px;
@@ -39,11 +41,11 @@ body {
 /* RESET */
 
 a {
-  color: black;
+  color: colors.$black;
   text-decoration: none;
 
   &:hover {
-    color: #2599FE;
+    color: colors.$blue;
     text-decoration: underline;
   }
 }

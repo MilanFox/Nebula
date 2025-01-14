@@ -19,18 +19,19 @@ const handleSignOut = async () => { await signOut(auth); };
 
 <style lang="scss">
 @use 'assets/scss/responsive';
+@use 'assets/scss/colors';
 
 .auth-button {
   @mixin auth-button-style {
     padding: 16px;
     display: flex;
     justify-content: center;
-    border: 1px solid black;
-    background: black;
-    color: white;
+    border: 1px solid colors.$black;
+    background: colors.$black;
+    color: colors.$white;
 
     &:hover {
-      color: white;
+      color: colors.$white;
       text-decoration: none;
     }
   }
@@ -47,7 +48,7 @@ const handleSignOut = async () => { await signOut(auth); };
     cursor: pointer;
 
     &:hover {
-      color: #2599FE;
+      color: colors.$blue;
       text-decoration: underline;
     }
 
