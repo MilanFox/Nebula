@@ -1,3 +1,3 @@
 <template>
-  <NuxtWelcome />
+  <div>Lorem Impsum dolor sit amet</div>
 </template>
