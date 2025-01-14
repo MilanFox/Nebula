@@ -11,7 +11,8 @@
       <template #right>
         <div class="home__intro-text">
           <div>
-            <p>Welcome to <em>Nebula</em>, a challenge-driven platform designed to strengthen your coding fundamentals.
+            <p>
+              Welcome to <em>Nebula</em>, a challenge-driven platform designed to strengthen your coding fundamentals.
             </p>
             As the Captain of the ISS Nebula, you’ll solve puzzles and tackle algorithmic challenges while navigating
             the
@@ -25,7 +26,7 @@
     </GridLayout>
   </ContentSection>
   <ContentSection title="Frequently Asked Questions">
-    Hello World
+    <AccordionGroup/>
   </ContentSection>
 </template>
 
@@ -66,7 +67,10 @@
 
       &--rotating {
         @include animations.rotation(300s);
-        z-index: -1;
+
+        & {
+          z-index: -1;
+        }
       }
     }
   }
