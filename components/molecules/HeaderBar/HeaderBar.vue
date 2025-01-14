@@ -1,8 +1,8 @@
 <template>
-  <div class="header-bar">
+  <header class="header-bar">
     <NuxtLink to="/"><img src="assets/images/logo.svg" alt="Home" class="header-bar__logo"></NuxtLink>
     <MainNav/>
-  </div>
+  </header>
 </template>
 
 <style lang="scss">
