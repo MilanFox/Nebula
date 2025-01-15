@@ -10,4 +10,5 @@ export interface InputFormProps {
   formFields: Reactive<FormField[]>;
   onSubmit: () => any;
   submitLabel?: string;
+  isBusy?: boolean;
 }

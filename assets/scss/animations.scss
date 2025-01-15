@@ -1,4 +1,6 @@
 @mixin rotation($duration) {
+  animation: rotation $duration linear infinite;
+
   @keyframes rotation {
     from {
       transform: rotate(0deg);
@@ -6,10 +8,6 @@
     to {
       transform: rotate(360deg);
     }
-  }
-
-  & {
-    animation: rotation $duration linear infinite;
   }
 
   @media (prefers-reduced-motion) {

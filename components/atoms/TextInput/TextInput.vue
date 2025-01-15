@@ -1,13 +1,14 @@
 <template>
   <div class="text-input">
-    <label :for="id">{{ label }} <span v-if="isRequired" aria-hidden="true">*</span></label>
+    <label :for="id" class="text-input__label">{{ label }} <span v-if="isRequired" aria-hidden="true">*</span></label>
 
     <input
       :type="type"
       :id="id"
+      class="text-input__input"
       :aria-describedby="`${id}-error`"
       :required="isRequired"
-      :placeholder="placeholder"
+      :placeholder="placeholder || ''"
       :aria-invalid="!isValid"
       @input="errorMessage = ''"
       v-model="text"
@@ -15,7 +16,7 @@
       @keydown.enter.prevent.stop="() => emit('enter')"
     >
 
-    <p v-if="errorMessage" :id="`${id}-error`">{{ errorMessage }}</p>
+    <p v-if="errorMessage" :id="`${id}-error`" class="text-input__error">{{ errorMessage }}</p>
   </div>
 </template>
 
@@ -50,19 +51,43 @@ defineExpose({ validate, isValid, focusInput });
 </script>
 
 <style lang="scss">
+@use 'assets/scss/colors';
+
 .text-input {
   display: flex;
   flex-direction: column;
-}
+  margin-bottom: 16px;
 
-label {
-  font-weight: bold;
-}
+  &:not(:has(.text-input__error)) {
+    margin-bottom: 36px;
+  }
 
-input {
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  &__label {
+    font-weight: 100;
+    transform: translateY(32px);
+    pointer-events: none;
+    transition: all ease-in-out 0.1s;
+  }
+
+  &:has(.text-input__input:not(:placeholder-shown)) &__label,
+  &:has(.text-input__input:focus-visible) &__label {
+    font-weight: 500;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  &__input {
+    all: unset;
+    border-bottom: 1px solid colors.$black;
+    height: 30px;
+    margin-top: 0.5rem;
+  }
+
+  &__error {
+    margin: 0;
+    font-weight: 300;
+    color: red;
+    height: 20px;
+  }
 }
 </style>
