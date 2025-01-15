@@ -98,11 +98,8 @@
       grid-row: 1;
 
       &--rotating {
+        z-index: -1;
         @include animations.rotation(300s);
-
-        & {
-          z-index: -1;
-        }
       }
     }
   }

@@ -33,11 +33,7 @@ defineProps<PuzzleCardProps>();
     position: relative;
     padding: 16px 16px 32px;
     background: #ebebef;
-
-    @include responsive.to-breakpoint(tablet) {
-      width: 100%;
-      min-height: 150px;
-    }
+    text-decoration: none;
 
     $edge: 20px;
     clip-path: polygon(
@@ -49,6 +45,11 @@ defineProps<PuzzleCardProps>();
         0% 100%,
         0 $edge
     );
+
+    @include responsive.to-breakpoint(tablet) {
+      width: 100%;
+      min-height: 150px;
+    }
 
     &:hover {
       color: inherit;
