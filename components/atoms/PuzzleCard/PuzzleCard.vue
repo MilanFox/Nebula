@@ -60,15 +60,15 @@ defineProps<PuzzleCardProps>();
       content: '';
       background: repeating-linear-gradient(
           to right,
-          black 0%, black 8%,
+          colors.$black 0%, colors.$black 8%,
           transparent 8%, transparent 14%,
-          black 14%, black 25%,
+          colors.$black 14%, colors.$black 25%,
           transparent 25%, transparent 35%,
-          black 35%, black 50%,
+          colors.$black 35%, colors.$black 50%,
           transparent 50%, transparent 60%,
-          black 60%, black 72%,
+          colors.$black 60%, colors.$black 72%,
           transparent 72%, transparent 89%,
-          black 89%, black 100%,
+          colors.$black 89%, colors.$black 100%,
       );
       background-size: 20px 100%;
       width: calc(100% - 16px);
