@@ -4,8 +4,13 @@
     <main>
       <slot/>
     </main>
+    <SpeedInsights/>
   </div>
 </template>
+
+<script setup lang="ts">
+import { SpeedInsights } from '@vercel/speed-insights/nuxt';
+</script>
 
 <style lang="scss">
 body:has(.default-layout) {
@@ -19,5 +24,3 @@ body:has(.default-layout) {
   margin: auto;
 }
 </style>
-<script setup lang="ts">
-</script>

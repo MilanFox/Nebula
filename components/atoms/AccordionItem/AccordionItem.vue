@@ -55,6 +55,7 @@ const toggleAccordion = () => isExpanded.value = !isExpanded.value;
       position: absolute;
       right: 16px;
       transform: rotateZ(405deg);
+      transform-origin: 11px 11px;
       transition: transform ease-in-out 0.3s;
       display: inline-block;
       width: 16px;
@@ -78,6 +79,10 @@ const toggleAccordion = () => isExpanded.value = !isExpanded.value;
     .accordion-item__button::after {
       transform: rotateZ(225deg);
     }
+  }
+
+  & + .accordion-item {
+    border-top: 1px solid colors.$grey;
   }
 }
 </style>

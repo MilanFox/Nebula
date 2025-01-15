@@ -4,8 +4,8 @@
     <GridLayout class="home__intro" layout="1-2">
       <template #left>
         <div class="home__intro-render">
-          <img src="assets/images/galaxy.png" alt="" class="home__intro-image home__intro-image--rotating">
-          <img src="assets/images/ship.png" alt="" class="home__intro-image">
+          <img src="assets/images/galaxy.webp" alt="" class="home__intro-image home__intro-image--rotating">
+          <img src="assets/images/ship.webp" alt="" class="home__intro-image">
         </div>
       </template>
       <template #right>
