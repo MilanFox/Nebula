@@ -20,6 +20,8 @@ import { publishedPuzzles } from '~/lib/puzzles/puzzles.const';
 
   @include responsive.to-breakpoint(tablet) {
     justify-content: center;
+    flex-direction: column;
+
   }
 }
 </style>

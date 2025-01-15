@@ -34,6 +34,11 @@ defineProps<PuzzleCardProps>();
     padding: 16px 16px 32px;
     background: #ebebef;
 
+    @include responsive.to-breakpoint(tablet) {
+      width: 100%;
+      min-height: 150px;
+    }
+
     $edge: 20px;
     clip-path: polygon(
         $edge 0,
@@ -64,12 +69,19 @@ defineProps<PuzzleCardProps>();
           transparent 72%, transparent 89%,
           black 89%, black 100%,
       );
-      background-size: 10% 100%;
+      background-size: 20px 100%;
       width: calc(100% - 16px);
       height: 50px;
       left: 8px;
       bottom: 64px;
       position: absolute;
+
+      @include responsive.to-breakpoint(tablet) {
+        height: 30px;
+        width: calc(100% - 32px);
+        left: 16px;
+        bottom: 32px;
+      }
     }
   }
 
@@ -81,6 +93,8 @@ defineProps<PuzzleCardProps>();
 
     @include responsive.to-breakpoint(tablet) {
       font-size: 16px;
+      left: 16px;
+      bottom: 8px;
     }
   }
 }
