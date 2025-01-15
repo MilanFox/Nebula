@@ -15,6 +15,7 @@ defineProps<PuzzleCardProps>();
 
 <style lang="scss">
 @use 'assets/scss/colors';
+@use 'assets/scss/responsive';
 
 .puzzle-card {
   filter: drop-shadow(3px 3px rgba(colors.$black, 1));
@@ -77,6 +78,10 @@ defineProps<PuzzleCardProps>();
     left: 12px;
     bottom: 4px;
     font-weight: 300;
+
+    @include responsive.to-breakpoint(tablet) {
+      font-size: 16px;
+    }
   }
 }
 
