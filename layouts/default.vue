@@ -16,6 +16,7 @@ import { SpeedInsights } from '@vercel/speed-insights/nuxt';
 body:has(.default-layout) {
   background: rgb(255, 255, 255);
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 50%, rgba(213, 217, 221, 1) 100%);
+  background-attachment: fixed;
 }
 
 .default-layout {
