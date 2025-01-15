@@ -49,6 +49,7 @@ const toggleAccordion = () => isExpanded.value = !isExpanded.value;
     padding: 4px 40px 4px 0;
     flex-grow: 1;
     align-items: flex-start;
+    font-weight: 500;
 
     &::after {
       content: '';
