@@ -8,7 +8,7 @@
       ref="inputs"
       @enter="handleSubmit"
     />
-    <TextButton @click="handleSubmit">{{ submitLabel }}</TextButton>
+    <TextButton @click="handleSubmit" :is-busy="isBusy">{{ submitLabel }}</TextButton>
   </div>
 </template>
 
@@ -30,9 +30,3 @@ const handleSubmit = () => {
   if (isValid) props.onSubmit();
 };
 </script>
-
-<style lang="scss">
-.input-form {
-  /* TODO: Style */
-}
-</style>
