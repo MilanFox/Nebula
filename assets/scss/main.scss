@@ -42,11 +42,23 @@ body {
   }
 }
 
+hr {
+  all: unset;
+
+  &::after {
+    content: '';
+    display: block;
+    margin: 32px 0;
+    width: 100%;
+    height: 20px;
+    background: url('assets/images/dash.svg') repeat-x;
+  }
+}
+
 /* RESET */
 
 a {
   color: colors.$black;
-  text-decoration: none;
 
   &:hover {
     color: colors.$blue;
