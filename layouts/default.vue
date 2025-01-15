@@ -1,7 +1,7 @@
 <template>
   <div class="default-layout">
     <HeaderBar/>
-    <main>
+    <main id="main">
       <slot/>
     </main>
     <SpeedInsights/>
