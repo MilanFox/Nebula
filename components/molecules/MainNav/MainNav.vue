@@ -24,7 +24,7 @@ const baseItems = [
 ];
 
 const navItems = computed(() => {
-  const accountLink = { to: '/login', label: 'Account' };
+  const accountLink = { to: '/account', label: 'Account' };
   return user.value ? [...baseItems, accountLink] : baseItems;
 });
 </script>
@@ -57,25 +57,31 @@ const navItems = computed(() => {
     }
   }
 
-  &__link + &__link {
-    display: flex;
-    align-items: center;
+  &__link {
+    a:not(:hover) {
+      text-decoration: none;
+    }
 
-    &::before {
-      content: '';
-      height: 16px;
-      width: 32px;
-      margin-right: 32px;
-      border-right: 2px solid #BEC2C5;
-      transform: skew(-20deg);
+    & + & {
+      display: flex;
+      align-items: center;
 
-      @include responsive.to-breakpoint(desktop) {
-        width: 16px;
-        margin-right: 16px;
-      }
+      &::before {
+        content: '';
+        height: 16px;
+        width: 32px;
+        margin-right: 32px;
+        border-right: 2px solid #BEC2C5;
+        transform: skew(-20deg);
 
-      @include responsive.to-breakpoint(tablet) {
-        content: none;
+        @include responsive.to-breakpoint(desktop) {
+          width: 16px;
+          margin-right: 16px;
+        }
+
+        @include responsive.to-breakpoint(tablet) {
+          content: none;
+        }
       }
     }
   }
