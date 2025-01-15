@@ -20,8 +20,7 @@ const { user } = storeToRefs(userStore);
 
 const baseItems = [
   { to: '/', label: 'Home' },
-  { to: '/', label: 'Puzzles' },
-  { to: '/', label: 'Repo' },
+  { to: 'https://github.com/MilanFox/Nebula-Frontend', label: 'Repo' },
 ];
 
 const navItems = computed(() => {

@@ -13,7 +13,7 @@ defineProps<ContentSectionProps>();
 
 <style lang="scss">
 .content-section {
-  padding-top: 16px;
+  margin: 64px 0;
 
   &__title {
     font-size: 32px;

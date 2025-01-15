@@ -25,6 +25,9 @@
       </template>
     </GridLayout>
   </ContentSection>
+  <ContentSection title="Puzzles">
+    <PuzzleCardList/>
+  </ContentSection>
   <ContentSection title="Frequently Asked Questions">
     <AccordionItem title="This looks an awful lot like Advent of Code">
       <p>First of all it doesn't <em>look</em> like AoC. I've put way more emphasis on the frontend. 😉</p>
@@ -105,5 +108,4 @@
   }
 }
 </style>
-<script setup lang="ts">
-</script>
+
