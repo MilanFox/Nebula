@@ -16,5 +16,5 @@ export const useUserStore = defineStore('userStore', () => {
 
   const seed = computed(() => user?.value ? hashUUID(user.value.uid) : undefined);
 
-  return { user, loading, seed };
+  return { user, loading, seed, hashUUID };
 });

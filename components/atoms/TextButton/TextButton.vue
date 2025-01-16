@@ -17,7 +17,7 @@ defineProps<TextButtonProps>();
   all: unset;
   cursor: pointer;
   padding: 16px;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   border: 1px solid colors.$black;
   background: colors.$black;
