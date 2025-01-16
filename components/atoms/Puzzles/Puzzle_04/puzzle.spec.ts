@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import generateOutput from './puzzle.output.js';
+import generateOutput from './puzzle.output';
+import generateInput from './puzzle.input';
 
 describe('Puzzle 04', () => {
   it('should return the correct output for example 01', () => {
@@ -15,5 +16,15 @@ describe('Puzzle 04', () => {
   it('should return the correct output for example 03', () => {
     const input = Array(500).fill(0.2);
     expect(generateOutput(input)).toBe(249);
+  });
+
+  const input = generateInput(123456789);
+
+  it('should match the input snapshot', () => {
+    expect(input).toMatchSnapshot();
+  });
+
+  it('should match the output snapshot', () => {
+    expect(generateOutput(input)).toMatchSnapshot();
   });
 });

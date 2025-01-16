@@ -1,4 +1,4 @@
-import { PseudoRandomNumberGenerator } from '@atoms/Puzzles';
+import { PseudoRandomNumberGenerator } from '../helpers';
 
 const generateInput = (seed: number): Number[][] => {
   const pseudoRandomGenerator = new PseudoRandomNumberGenerator(seed);
