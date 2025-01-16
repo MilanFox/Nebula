@@ -1,11 +1,16 @@
 <template>
   <ul class=puzzle-card-list>
-    <PuzzleCard v-for="puzzleData in publishedPuzzles" :key="puzzleData.id" v-bind="puzzleData"/>
+    <PuzzleCard
+      v-for="(puzzleData, id) in puzzles"
+      :key="puzzleData.title"
+      v-bind="puzzleData"
+      :id="(id + 1).toString().padStart(2, '0')"
+    />
   </ul>
 </template>
 
 <script setup lang="ts">
-import { publishedPuzzles } from '~/lib/puzzles/puzzles.const';
+import { puzzles } from '@atoms/Puzzles';
 </script>
 
 <style lang="scss">

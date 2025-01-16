@@ -1,6 +1,7 @@
 <template>
   <div class="default-layout">
     <HeaderBar/>
+    <hr aria-hidden="true">
     <main id="main">
       <slot/>
     </main>

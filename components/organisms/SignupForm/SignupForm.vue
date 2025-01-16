@@ -1,7 +1,5 @@
 <template>
   <div class="signup-form">
-    <hr aria-hidden="true">
-
     <ContentSection title="Sign up">
       <InputForm v-bind="formData" :is-busy="isBusy"/>
       <p role="alert" class="signup-form__error">{{ error }}</p>

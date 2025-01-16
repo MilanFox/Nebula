@@ -55,6 +55,16 @@ hr {
   }
 }
 
+code {
+  background: rgba(colors.$blue, 0.3);
+  padding: 4px;
+
+  &::selection {
+    background: colors.$black;
+    color: colors.$white;
+  }
+}
+
 /* RESET */
 
 a {
