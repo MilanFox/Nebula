@@ -6,6 +6,7 @@ const alias = {
   '@atoms': resolve(__dirname, './components/atoms'),
   '@molecules': resolve(__dirname, './components/molecules'),
   '@organisms': resolve(__dirname, './components/organisms'),
+  '@puzzles': resolve(__dirname, './components/puzzles'),
   '@templates': resolve(__dirname, './templates'),
   '@store': resolve(__dirname, './store'),
   '@composables': resolve(__dirname, './composables'),
@@ -15,7 +16,10 @@ const alias = {
 };
 
 const dirs = [
-  { path: '~/components/atoms' }, { path: '~/components/molecules' }, { path: '~/components/organisms' },
+  { path: '~/components/atoms' },
+  { path: '~/components/molecules' },
+  { path: '~/components/organisms' },
+  { path: '~/components/puzzles', extensions: ['vue'], ignore: ['index.ts'] },
 ];
 
 export default defineNuxtConfig({
