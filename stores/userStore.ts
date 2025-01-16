@@ -7,5 +7,14 @@ export const useUserStore = defineStore('userStore', () => {
 
   watchEffect(() => { if (user.value !== null) loading.value = false; });
 
-  return { user, loading };
+  const hashUUID = (input: string) => {
+    return input
+      .split('')
+      .map(char => char.charCodeAt(0))
+      .reduce((hash, code) => (hash * 31 + code) >>> 0, 0);
+  };
+
+  const seed = computed(() => user?.value ? hashUUID(user.value.uid) : undefined);
+
+  return { user, loading, seed };
 });
