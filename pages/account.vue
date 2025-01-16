@@ -10,4 +10,6 @@ import { useUserStore } from '~/stores/userStore';
 
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
+
+useHead({ title: 'Nebula - Your Account' });
 </script>
