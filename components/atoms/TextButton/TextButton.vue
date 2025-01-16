@@ -51,7 +51,11 @@ defineProps<TextButtonProps>();
       position: absolute;
       animation: spin 1s linear infinite;
     }
+  }
 
+  &:active {
+    background: colors.$blue;
+    border-color: colors.$blue;
   }
 }
 </style>
