@@ -48,6 +48,12 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       ],
+      meta: [
+        { hid: 'description', name: 'description', content: 'Beginner-friendly Coding Puzzles' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'author', content: 'Milan Fox' },
+      ],
     },
   },
 
