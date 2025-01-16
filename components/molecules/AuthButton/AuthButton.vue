@@ -41,6 +41,10 @@ const handleSignOut = async () => { await signOut(auth); };
       @include auth-button-style;
     }
 
+    &:active {
+      background: colors.$blue;
+      border-color: colors.$blue;
+    }
   }
 
   > button {
