@@ -2,8 +2,10 @@ import { defineStore } from 'pinia';
 import { useCurrentUser } from 'vuefire';
 
 export const useUserStore = defineStore('userStore', () => {
-    const user = useCurrentUser();
+  const user = useCurrentUser();
+  const loading = ref(true);
 
-    return { user };
-  },
-);
+  watchEffect(() => { if (user.value !== null) loading.value = false; });
+
+  return { user, loading };
+});
