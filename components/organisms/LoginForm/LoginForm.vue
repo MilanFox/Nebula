@@ -37,6 +37,9 @@ import { formFields } from './LoginForm.data';
 const error = ref<string | null>(null);
 const isBusy = ref(false);
 
+const route = useRoute();
+const redirect = atob(typeof route.query.redirect === 'string' ? route.query.redirect : btoa('/'));
+
 const auth = useFirebaseAuth();
 const onSubmit = async () => {
   if (isBusy.value) return;
@@ -54,7 +57,7 @@ const handleSignInAnonymously = async () => {
   isBusy.value = true;
   await signInAnonymously(auth!);
   isBusy.value = false;
-  await useRouter().push('/');
+  await navigateTo(redirect);
 };
 
 const formData = { formFields, onSubmit, submitLabel: 'Log In' };
