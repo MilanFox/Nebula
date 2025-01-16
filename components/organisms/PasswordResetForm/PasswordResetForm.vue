@@ -1,5 +1,4 @@
 <template>
-  <hr aria-hidden="true">
   <div class="password-reset-form">
     <InputForm v-bind="formData"/>
     <p role="alert">{{ error }}</p>

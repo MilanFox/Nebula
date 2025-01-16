@@ -1,7 +1,5 @@
 <template>
   <div class="login-form">
-    <hr aria-hidden="true">
-
     <ContentSection title="Log in with an Account">
 
       <InputForm v-bind="formData" :is-busy="isBusy"/>
