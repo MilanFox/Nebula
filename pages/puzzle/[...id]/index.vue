@@ -56,7 +56,17 @@ onAuthStateChanged(getAuth(), async (user) => {
   }
   const { hashUUID } = useUserStore();
   const seed = hashUUID(user.uid);
-  const { data } = await useFetch('/api/puzzle', { method: 'POST', body: { seed, id } });
+  const { data } = await useFetch('/api/puzzle', {
+    key: `puzzle-data-${seed}-${id}`,
+    getCachedData: (key) => {
+      const nuxt = useNuxtApp();
+      if (nuxt.payload.data[key]) return nuxt.payload.data[key];
+      if (nuxt.static.data[key]) return nuxt.static.data[key];
+      return null;
+    },
+    method: 'POST',
+    body: { seed, id },
+  });
   input.value = data.value?.input;
   output.value = data.value?.output;
 });
