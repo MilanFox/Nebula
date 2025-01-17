@@ -3,6 +3,7 @@
     <NuxtLink :to="`/puzzle/${id}`" class="puzzle-card__content">
       <div class="puzzle-card__id">[Puzzle {{ id }}]</div>
       <div class="puzzle-card__title">{{ title }}</div>
+      <img src="/assets/images/check.svg" alt="(solved)" class="puzzle-card__check" v-if="isSolved">
     </NuxtLink>
   </li>
 </template>
@@ -97,6 +98,16 @@ defineProps<PuzzleCardProps>();
       left: 16px;
       bottom: 8px;
     }
+  }
+
+  &__check {
+    position: absolute;
+    top: -25px;
+    right: -75px;
+    opacity: 50%;
+    z-index: -1;
+    width: 200px;
+    aspect-ratio: 1;
   }
 }
 </style>

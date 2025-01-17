@@ -13,10 +13,10 @@ export const db = getFirestore(app);
 
 const usersRef = db.collection('users');
 
-export const getPuzzleStatus = async (seed: number) => {
+export const getUserInfo = async (seed: number) => {
   const userRef = usersRef.doc(seed.toString());
   const snapshot = await userRef.get();
-  return snapshot?.data()?.puzzles;
+  return snapshot?.data();
 };
 
 export const setPuzzleState = async (seed: number, id: string, isSolved: boolean) => {
