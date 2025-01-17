@@ -57,7 +57,13 @@
     </AccordionItem>
     <AccordionItem title="Can I suggest a puzzle?">
       <p>Sure. Why not!</p>
-      <p>If you look at the Backend Repo you will find all puzzles. Just follow the format and make a pull request.</p>
+      <p>If you look at the Repo you will find all puzzles in /components/puzzles. Just follow the format and make a
+        pull request.</p>
+    </AccordionItem>
+    <AccordionItem title="Wait, what language is this supposed to be solved in?">
+      <p>Whatever you like actually - just like it's big idol "Advent of Code".</p>
+      <p><em>But</em> these puzzles have been written because they highlight pitfalls that are sometimes very specific
+        to JS. So they where written with JS in mind - but that doesn't mean you can't solve them any other way.</p>
     </AccordionItem>
   </ContentSection>
 </template>
@@ -106,3 +112,5 @@
 }
 </style>
 
+<script setup lang="ts">
+</script>
