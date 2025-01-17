@@ -1,5 +1,4 @@
 <template>
-  <hr aria-hidden="true">
   <ContentSection title="Your Account">
     <ul>
       <li>UID: {{ user?.uid }}</li>

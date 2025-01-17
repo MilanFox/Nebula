@@ -1,4 +1,4 @@
-import { count } from './puzzle.const.js';
+import { count } from './puzzle.const';
 import type generateInput from './puzzle.input';
 
 const generateOutput = (input: ReturnType<typeof generateInput>) => {

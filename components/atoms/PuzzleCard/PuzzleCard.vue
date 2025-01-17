@@ -1,5 +1,5 @@
 <template>
-  <li class=puzzle-card>
+  <li class="puzzle-card">
     <NuxtLink :to="`/puzzle/${id}`" class="puzzle-card__content">
       <div class="puzzle-card__id">[Puzzle {{ id }}]</div>
       <div class="puzzle-card__title">{{ title }}</div>
@@ -99,5 +99,4 @@ defineProps<PuzzleCardProps>();
     }
   }
 }
-
 </style>
