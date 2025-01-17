@@ -77,7 +77,11 @@ const answer = ref('');
 const handleSubmit = async () => {
   if (!outputField.value) return;
   outputField.value.validate();
-  if (!outputField.value.isValid) return;
+  if (!outputField.value.isValid) {
+    outputField.value?.focusInput();
+    return;
+  }
+
   const { seed } = userStore;
   const numericAnswer = Number(answer.value);
 

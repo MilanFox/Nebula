@@ -27,6 +27,10 @@ const validateAll = () => {
 
 const handleSubmit = () => {
   const isValid = validateAll();
-  if (isValid) props.onSubmit();
+  if (!isValid) {
+    inputs.value?.find(input => !input.isValid)?.focusInput();
+    return;
+  }
+  props.onSubmit();
 };
 </script>
