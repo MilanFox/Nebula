@@ -12,16 +12,5 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const cachedGetData = cachedFunction(
-    async ({ seed }) => {
-      const data = getUserInfo(seed);
-      return data;
-    },
-    {
-      getKey: ({ seed }) => `user-data-${seed}`,
-      maxAge: 60 * 60,
-    },
-  );
-
-  return await cachedGetData({ seed });
+  return await getUserInfo(seed);
 });
