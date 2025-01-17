@@ -1,4 +1,4 @@
-import { count } from './puzzle.const.js';
+import { count } from './puzzle.const';
 import { PseudoRandomNumberGenerator } from '../helpers';
 
 const generateInput = (seed: number) => {
