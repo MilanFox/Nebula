@@ -22,19 +22,16 @@ if (!puzzles[i]) throw createError({
 });
 
 const input = ref();
-const output = ref();
 
 onAuthStateChanged(getAuth(), async (user) => {
   if (!user) {
     input.value = undefined;
-    output.value = undefined;
     return;
   }
   const { hashUUID } = useUserStore();
   const seed = hashUUID(user.uid);
-  const { data } = await useFetch('/api/puzzle', { method: 'POST', body: { seed, id } });
+  const { data } = await useFetch('/api/input', { method: 'POST', body: { seed, id } });
   input.value = data.value?.input;
-  output.value = data.value?.output;
 });
 </script>
 

@@ -4,7 +4,7 @@
 
     <component :is="description" class="puzzle-page__description"/>
 
-    <template v-if="input && output">
+    <template v-if="input">
       <ContentSection title="Your Input">
         <TextButton @click="handleGetInput">Copy to Clipboard</TextButton>
         Or
@@ -46,29 +46,18 @@ const { title, description } = puzzles[i];
 useHead({ title: `Nebula - Puzzle ${id}` });
 
 const input = ref();
-const output = ref();
+
+const userStore = useUserStore();
 
 onAuthStateChanged(getAuth(), async (user) => {
   if (!user) {
     input.value = undefined;
-    output.value = undefined;
     return;
   }
-  const { hashUUID } = useUserStore();
+  const { hashUUID } = userStore;
   const seed = hashUUID(user.uid);
-  const { data } = await useFetch('/api/puzzle', {
-    key: `puzzle-data-${seed}-${id}`,
-    getCachedData: (key) => {
-      const nuxt = useNuxtApp();
-      if (nuxt.payload.data[key]) return nuxt.payload.data[key];
-      if (nuxt.static.data[key]) return nuxt.static.data[key];
-      return null;
-    },
-    method: 'POST',
-    body: { seed, id },
-  });
-  input.value = data.value?.input;
-  output.value = data.value?.output;
+  const data = await $fetch('/api/input', { method: 'POST', body: { seed, id } });
+  input.value = data?.input;
 });
 
 const handleGetInput = () => {
@@ -85,11 +74,19 @@ const answerValidator = (value: string) => {
 const outputField = ref<TextInputInstance>();
 const answer = ref('');
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
   if (!outputField.value) return;
   outputField.value.validate();
   if (!outputField.value.isValid) return;
-  console.log('Your Answer was', Number(answer.value) === output.value); /* TODO */
+  const { seed } = userStore;
+  const numericAnswer = Number(answer.value);
+
+  const data = await $fetch('/api/validate', {
+    method: 'POST',
+    body: { seed, id, answer: numericAnswer },
+  });
+
+  console.log(data.isValid);
 };
 </script>
 
