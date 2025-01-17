@@ -1,4 +1,5 @@
 import { getData } from '@puzzles/puzzles';
+import { setPuzzleState } from '@server/lib/firebase';
 
 interface RequestBody {
   seed: number;
@@ -36,6 +37,8 @@ export default defineEventHandler(async (event) => {
 
   const { output } = data;
   const isValid = output === answer;
+
+  if (isValid) await setPuzzleState(seed, id, true);
 
   return { isValid };
 });
