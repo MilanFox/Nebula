@@ -26,7 +26,6 @@
         </div>
       </ContentSection>
     </template>
-
   </div>
 </template>
 
@@ -36,6 +35,7 @@ import { useUserStore } from '~/stores/userStore';
 import type { TextInputInstance } from '@atoms/TextInput/TextInput.types';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
+const router = useRouter();
 const route = useRoute();
 const [id] = route.params.id;
 
@@ -90,7 +90,10 @@ const handleSubmit = async () => {
     body: { seed, id, answer: numericAnswer },
   });
 
-  console.log(data.isValid);
+  const { isValid } = data;
+  answer.value = '';
+
+  await router.push({ path: `/puzzle/${id}/result`, query: { valid: isValid.toString() } });
 };
 </script>
 
