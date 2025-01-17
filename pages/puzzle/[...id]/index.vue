@@ -26,6 +26,14 @@
         </div>
       </ContentSection>
     </template>
+
+    <template v-else>
+      <ContentSection title="Your Input">
+        <p>Every user gets a unique input - if you want to try to solve it, please
+          <NuxtLink :to="`/login?redirect=${redirectionKey}`">login.</NuxtLink>
+        </p>
+      </ContentSection>
+    </template>
   </div>
 </template>
 
@@ -38,6 +46,8 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 const router = useRouter();
 const route = useRoute();
 const [id] = route.params.id;
+
+const redirectionKey = btoa(route.fullPath);
 
 const i = Number(id) - 1;
 if (!puzzles[i]) throw createError({ statusCode: 404, statusMessage: 'This puzzle doesn\'t exist yet.' });

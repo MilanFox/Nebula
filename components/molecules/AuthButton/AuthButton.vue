@@ -1,7 +1,7 @@
 <template>
   <div class="auth-button">
     <TextButton v-if="user" @click="handleSignOut">Log Out</TextButton>
-    <NuxtLink v-else to="/login"> Login</NuxtLink>
+    <NuxtLink v-else :to="`/login?redirect=${redirectionKey}`">Login</NuxtLink>
   </div>
 </template>
 
@@ -9,6 +9,9 @@
 import { getAuth, signOut } from 'firebase/auth';
 import { useUserStore } from '~/stores/userStore';
 import { storeToRefs } from 'pinia';
+
+const route = useRoute();
+const redirectionKey = computed(() => btoa(route.fullPath));
 
 const auth = getAuth();
 const userStore = useUserStore();
